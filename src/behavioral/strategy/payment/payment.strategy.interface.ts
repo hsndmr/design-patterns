@@ -1,3 +1,3 @@
 export interface PaymentStrategyInterface {
-    pay(amount: number): string;
+  pay(amount: number): string;
 }
