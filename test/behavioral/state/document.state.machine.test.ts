@@ -25,7 +25,11 @@ test("Document state must not change to Another State  from DRAFT except IN_REVI
     DocumentStateType.CLOSED,
     DocumentStateType.REJECTED,
     DocumentStateType.DRAFT,
-  ]
+  ];
 
-  states.forEach(state => expect(() => {documentStateMachine.toState(state)}).toThrow(NotFoundNextStateException) )
+  states.forEach((state) =>
+    expect(() => {
+      documentStateMachine.toState(state);
+    }).toThrow(NotFoundNextStateException)
+  );
 });
