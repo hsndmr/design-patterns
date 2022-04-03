@@ -19,5 +19,13 @@ test("Document state must not change to Another State  from DRAFT except IN_REVI
   documentStateMachine.setArgs({
     content: "content",
   });
-  expect(() => {documentStateMachine.toState(DocumentStateType.APPROVED)}).toThrow(NotFoundNextStateException) 
+
+  const states = [
+    DocumentStateType.APPROVED,
+    DocumentStateType.CLOSED,
+    DocumentStateType.REJECTED,
+    DocumentStateType.DRAFT,
+  ]
+
+  states.forEach(state => expect(() => {documentStateMachine.toState(state)}).toThrow(NotFoundNextStateException) )
 });
