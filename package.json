@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint ./src ./test --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx}' './test/**/*.{js,jsx,ts,tsx}'",
     "test": "jest"
   },
   "repository": {
